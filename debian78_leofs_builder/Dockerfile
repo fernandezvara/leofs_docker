@@ -14,11 +14,12 @@ RUN apt-get update && \
   make && \
   make release && \
   mkdir /opt/leofs && \
-  cp -r package /opt/leofs && \
+  cp -r package/* /opt/leofs && \
   rm -rf /tmp/* && \
-  mkdir /opt/leofs/leo_manager_0/work/mnesia/127.0.0.1
-
-
-#./leofs-adm create-user elfary
-#  access-key-id: 2e6acebaa58d7426163d
-#  secret-access-key: 02643cfa2253b25288b07ac8e5f05fb4acddc6d7
+  mkdir -p /opt/leofs/leo_manager_0/work/mnesia/127.0.0.1 && \
+  mkdir -p /opt/confd && \
+  cd /opt/confd && \
+  wget https://github.com/kelseyhightower/confd/releases/download/v0.9.0/confd-0.9.0-linux-amd64 && \
+  mv /opt/confd/confd-0.9.0-linux-amd64 /opt/confd/confd && \
+  chmod 755 /opt/confd/confd && \
+  mkdir -p /etc/confd/{conf.d,templates}

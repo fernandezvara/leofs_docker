@@ -1,7 +1,7 @@
 [template]
-src=leo_manager_slave.tmpl
-dest=/opt/leofs/leo_manager_1/etc/leo_manager.conf
-owner=root
+src="leo_manager_slave.tmpl"
+dest="/opt/leofs/leo_manager_1/etc/leo_manager.conf"
+owner="root"
 mode="644"
 keys= [
   "CONF_NUM_REPLICAS",

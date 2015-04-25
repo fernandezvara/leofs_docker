@@ -16,6 +16,8 @@ ENV CONF_MANAGER_SLAVE_IP 127.0.0.1
 
 COPY storage.toml /etc/confd/conf.d/storage.toml
 COPY leo_storage.tmpl /etc/confd/templates/leo_storage.tmpl
+COPY start.sh /opt/start.sh
 
-RUN /opt/confd/confd -onetime -backend env -confdir /etc/confd && \
-  $LEOFS_PATH/leo_storage/bin/leo_storage start
+RUN chmod 755 /opt/start.sh
+
+CMD ["/opt/start.sh"]

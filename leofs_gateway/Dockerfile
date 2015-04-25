@@ -26,6 +26,8 @@ ENV CONF_MANAGER_SLAVE_IP 127.0.0.1
 
 COPY gateway.toml /etc/confd/conf.d/gateway.toml
 COPY leo_gateway.tmpl /etc/confd/templates/leo_gateway.tmpl
+COPY start.sh /opt/start.sh
 
-RUN /opt/confd/confd -onetime -backend env -confdir /etc/confd && \
-  $LEOFS_PATH/leo_gateway/bin/leo_gateway start
+RUN chmod 755 /opt/start.sh
+
+CMD ["/opt/start.sh"]

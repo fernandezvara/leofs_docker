@@ -36,7 +36,7 @@
 ## MANAGER
 ## --------------------------------------------------------------------
 ## Partner of manager's alias
-manager.partner = manager_1@{{getenv CONF_MANAGER_SLAVE_IP}}
+manager.partner = manager_1@{{getenv "CONF_MANAGER_SLAVE_IP"}}
 
 ## Manager-console accepatable port number
 console.port.cui  = 10010
@@ -54,10 +54,10 @@ console.histories.num_of_display = 200
 ##     * Only set its configurations to **Manager-master**
 ## --------------------------------------------------------------------
 ## DC ID
-system.dc_id = {{getenv CONF_DC_ID}}
+system.dc_id = {{getenv "CONF_DC_ID"}}
 
 ## Cluster Id
-system.cluster_id = {{getenv CONF_CLUSTER_ID}}
+system.cluster_id = {{getenv "CONF_CLUSTER_ID"}}
 
 ## --------------------------------------------------------------------
 ## MANAGER - Consistency Level
@@ -65,19 +65,19 @@ system.cluster_id = {{getenv CONF_CLUSTER_ID}}
 ##     * See: http://www.leofs.org/docs/configuration.html#the-consistency-level
 ## --------------------------------------------------------------------
 ## A number of replicas
-consistency.num_of_replicas = {{getenv CONF_NUM_REPLICAS}}
+consistency.num_of_replicas = {{getenv "CONF_NUM_REPLICAS"}}
 
 ## A number of replicas needed for a successful WRITE operation
-consistency.write = {{getenv CONF_WRITE}}
+consistency.write = {{getenv "CONF_WRITE"}}
 
 ## A number of replicas needed for a successful READ operation
-consistency.read = {{getenv CONF_READ}}
+consistency.read = {{getenv "CONF_READ"}}
 
 ## A number of replicas needed for a successful DELETE operation
-consistency.delete = {{getenv CONF_DELETE}}
+consistency.delete = {{getenv "CONF_DELETE"}}
 
 ## A number of rack-aware replicas
-consistency.rack_aware_replicas = {{getenv CONF_RACK_AWARE_REPLICAS}}
+consistency.rack_aware_replicas = {{getenv "CONF_RACK_AWARE_REPLICAS"}}
 
 
 ## --------------------------------------------------------------------
@@ -95,7 +95,7 @@ consistency.rack_aware_replicas = {{getenv CONF_RACK_AWARE_REPLICAS}}
 ##     * Store the RING and the command histories
 ## --------------------------------------------------------------------
 ## Mnesia dir
-mnesia.dir = {{getenv CONF_MNESIA_DIR}}
+mnesia.dir = {{getenv "CONF_MNESIA_DIR"}}
 
 ## The write threshold for transaction log dumps
 ## as the number of writes to the transaction log
@@ -109,7 +109,7 @@ mnesia.dc_dump_limit = 40
 ## MANAGER - Log
 ## --------------------------------------------------------------------
 ## Log level: [0:debug, 1:info, 2:warn, 3:error]
-log.log_level = {{getenv CONF_LOG_LEVEL}}
+log.log_level = {{getenv "CONF_LOG_LEVEL"}}
 
 ## Output log file(s) - Erlang's log
 ## log.erlang = ./log/erlang
@@ -175,11 +175,11 @@ rpc.client.connection_buffer_size = 16
 ## For vm.args
 ##======================================================================
 ## Name of the LeoFS's manager node
-nodename = manager_0@{{getenv CONF_MANAGER_MASTER_IP}}
+nodename = manager_0@{{getenv "CONF_MANAGER_MASTER_IP"}}
 
 ## Cookie for distributed node communication.  All nodes in the same cluster
 ## should use the same cookie or they will not be able to communicate.
-distributed_cookie = {{getenv CONF_DISTRIBUTED_COOKIE}}
+distributed_cookie = {{getenv "CONF_DISTRIBUTED_COOKIE"}}
 
 ## Enable kernel poll
 erlang.kernel_poll = true

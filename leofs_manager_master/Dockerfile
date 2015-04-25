@@ -21,6 +21,8 @@ ENV CONF_MANAGER_SLAVE_IP 127.0.0.1
 
 COPY manager_master.toml /etc/confd/conf.d/manager_master.toml
 COPY leo_manager_master.tmpl /etc/confd/templates/leo_manager_master.tmpl
+COPY start.sh /opt/start.sh
 
-RUN /opt/confd/confd -onetime -backend env -confdir /etc/confd && \
-  $LEOFS_PATH/leo_manager_0/bin/leo_manager start
+RUN chmod 755 /opt/start.sh
+
+CMD ["/opt/start.sh"]

@@ -3,7 +3,7 @@ FROM devopsbq/debian78_leofs_builder:1.2.8
 MAINTAINER Ops@bq <devops@bq.com>
 
 ENV PATH /usr/local/erlang/17.4/bin:$PATH
-ENV LEOFS_PATH /opt/leofs/package
+ENV LEOFS_PATH /opt/leofs
 
 ENV CONF_NUM_REPLICAS 1
 ENV CONF_READ 1

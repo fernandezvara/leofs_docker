@@ -1,0 +1,19 @@
+[template]
+src=leo_gateway.tmpl
+dest=/opt/leofs/leo_gateway/etc/leo_gateway.conf
+owner=root
+mode="644"
+keys= [
+  "CONF_NUM_REPLICAS",
+  "CONF_READ",
+  "CONF_WRITE",
+  "CONF_DELETE",
+  "CONF_RACK_AWARE_REPLICAS",
+  "CONF_MNESIA_DIR",
+  "CONF_LOG_LEVEL",
+  "CONF_DC_ID",
+  "CONF_CLUSTER_ID",
+  "CONF_DISTRIBUTED_COOKIE",
+  "CONF_MANAGER_MASTER_IP",
+  "CONF_MANAGER_SLAVE_IP",
+]

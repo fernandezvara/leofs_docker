@@ -22,4 +22,5 @@ RUN apt-get update && \
   wget https://github.com/kelseyhightower/confd/releases/download/v0.9.0/confd-0.9.0-linux-amd64 && \
   mv /opt/confd/confd-0.9.0-linux-amd64 /opt/confd/confd && \
   chmod 755 /opt/confd/confd && \
-  mkdir -p /etc/confd/{conf.d,templates}
+  mkdir -p /etc/confd/conf.d && \
+  mkdir -p /etc/confd/templates

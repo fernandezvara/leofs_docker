@@ -36,7 +36,7 @@
 ## Manager's Node(s)
 ## --------------------------------------------------------------------
 ## Name of Manager node(s)
-managers = [manager_0@{{getenv "CONF_MANAGER_MASTER_IP"}}, manager_1@{{getenv "CONF_MANAGER_SLAVE_IP"}}]
+managers = [manager_0@{{getv "/leofs/manager/master_ip"}}, manager_1@{{getv "/leofs/manager/slave_ip"}}]
 
 ## --------------------------------------------------------------------
 ## STORAGE

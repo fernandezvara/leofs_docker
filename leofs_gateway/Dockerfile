@@ -30,4 +30,11 @@ COPY start.sh /opt/start.sh
 
 RUN chmod 755 /opt/start.sh
 
+EXPOSE 2049:2049
+EXPOSE 4000:4000
+EXPOSE 4369:4369
+EXPOSE 8080:8080
+EXPOSE 8443:8443
+EXPOSE 22050:22050
+
 CMD ["/opt/start.sh"]

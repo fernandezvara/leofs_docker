@@ -4,10 +4,6 @@ dest="/opt/leofs/leo_storage/etc/leo_storage.conf"
 owner="root"
 mode="644"
 keys= [
-  "CONF_STORAGE_NAME",
-  "CONF_STORAGE_IP",
-  "CONF_LOG_LEVEL",
-  "CONF_DISTRIBUTED_COOKIE",
-  "CONF_MANAGER_MASTER_IP",
-  "CONF_MANAGER_SLAVE_IP",
+"/leofs/manager/master_ip",
+"/leofs/manager/slave_ip",
 ]

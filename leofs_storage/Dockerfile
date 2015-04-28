@@ -18,6 +18,9 @@ COPY storage.toml /etc/confd/conf.d/storage.toml
 COPY leo_storage.tmpl /etc/confd/templates/leo_storage.tmpl
 COPY start.sh /opt/start.sh
 
+EXPOSE 4010:4010
+EXPOSE 4369:4369
+
 RUN chmod 755 /opt/start.sh
 
 CMD ["/opt/start.sh"]

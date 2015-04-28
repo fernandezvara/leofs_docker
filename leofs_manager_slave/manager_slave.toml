@@ -4,16 +4,17 @@ dest="/opt/leofs/leo_manager_1/etc/leo_manager.conf"
 owner="root"
 mode="644"
 keys= [
-  "CONF_NUM_REPLICAS",
-  "CONF_READ",
-  "CONF_WRITE",
-  "CONF_DELETE",
-  "CONF_RACK_AWARE_REPLICAS",
-  "CONF_MNESIA_DIR",
-  "CONF_LOG_LEVEL",
-  "CONF_DC_ID",
-  "CONF_CLUSTER_ID",
-  "CONF_DISTRIBUTED_COOKIE",
-  "CONF_MANAGER_MASTER_IP",
-  "CONF_MANAGER_SLAVE_IP",
+  "/leofs/manager/master_ip",
+  "/leofs/manager/slave_ip",
+  "/leofs/manager/num_replicas".
+  "/leofs/manager/read".
+  "/leofs/manager/write",
+  "/leofs/manager/delete",
+  "/leofs/manager/rack_aware_replicas",
+  "/leofs/manager/mnesia_dir",
+  "/leofs/manager/slave_log_level",
+  "/leofs/manager/dc_id",
+  "/leofs/manager/cluster_id",
+  "/leofs/distributed_cookie"
 ]
+reload_cmd="/opt/leofs/leo_manager_1/bin/leo_manager stop && /opt/leofs/leo_manager_1/bin/leo_manager start"

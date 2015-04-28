@@ -36,7 +36,7 @@
 ## Manager's Node(s)
 ## --------------------------------------------------------------------
 ## Name of Manager node(s)
-managers = [manager_0@{{getenv "CONF_MANAGER_MASTER_IP"}}, manager_1@{{getenv "CONF_MANAGER_SLAVE_IP"}}]
+managers = [manager_0@{{getv "/leofs/manager/master_ip"}}, manager_1@{{getv "/leofs/manager/slave_ip"}}]
 
 
 ## --------------------------------------------------------------------
@@ -349,3 +349,8 @@ process_limit = 1048576
 
 ## Path of SNMP-agent configuration
 ## snmp_conf = ./snmp/snmpa_gateway_0/leo_gateway_snmp
+
+
+%%% This forces Erlang to use only ports 9100--9105 for distributed Erlang traffic.
+application:set_env(kernel, inet_dist_listen_min, 9100).
+application:set_env(kernel, inet_dist_listen_max, 9105).

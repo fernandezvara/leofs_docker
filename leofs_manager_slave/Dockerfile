@@ -23,6 +23,10 @@ COPY manager_slave.toml /etc/confd/conf.d/manager_slave.toml
 COPY leo_manager_slave.tmpl /etc/confd/templates/leo_manager_slave.tmpl
 COPY start.sh /opt/start.sh
 
+EXPOSE 4021:4021
+EXPOSE 4369:4369
+EXPOSE 10011:10011
+
 RUN chmod 755 /opt/start.sh
 
 CMD ["/opt/start.sh"]

@@ -23,6 +23,10 @@ COPY manager_master.toml /etc/confd/conf.d/manager_master.toml
 COPY leo_manager_master.tmpl /etc/confd/templates/leo_manager_master.tmpl
 COPY start.sh /opt/start.sh
 
+EXPOSE 4020:4020
+EXPOSE 4369:4369
+EXPOSE 10010:10010
+
 RUN chmod 755 /opt/start.sh
 
 CMD ["/opt/start.sh"]

@@ -1,5 +1,8 @@
 #!/bin/bash
 
 export CONF_GATEWAY_IP=$(/sbin/ip route|awk '/default/ { print $3}')
-/opt/confd/confd -onetime -backend env -confdir /etc/confd
+export CONF_GATEWAY_NAME=$(hostname)
+
+/opt/confd/confd -backend consul -confdir /etc/confd -node $CONF_CONSUL
+
 $LEOFS_PATH/leo_gateway/bin/leo_gateway start

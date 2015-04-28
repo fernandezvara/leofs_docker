@@ -18,9 +18,14 @@ RUN apt-get update && \
   rm -rf /tmp/* && \
   mkdir -p /opt/leofs/leo_manager_0/work/mnesia/127.0.0.1 && \
   mkdir -p /opt/confd && \
+  mkdir -p /opt/consulkv && \
+  mkdir -p /etc/confd/conf.d && \
+  mkdir -p /etc/confd/templates && \
   cd /opt/confd && \
   wget https://github.com/kelseyhightower/confd/releases/download/v0.9.0/confd-0.9.0-linux-amd64 && \
   mv /opt/confd/confd-0.9.0-linux-amd64 /opt/confd/confd && \
   chmod 755 /opt/confd/confd && \
-  mkdir -p /etc/confd/conf.d && \
-  mkdir -p /etc/confd/templates
+  cd /opt/consulkv && \
+  wget https://github.com/fernandezvara/consulkv/releases/download/v0.1/consulkv_linux_amd64_0.1 && \
+  mv /opt/consulkv/consulkv_linux_amd64_0.1 /opt/consulkv/consulkv && \
+  chmod 755 /opt/consulkv/consulkv

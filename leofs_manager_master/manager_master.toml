@@ -6,8 +6,8 @@ mode="644"
 keys= [
   "/leofs/manager/master_ip",
   "/leofs/manager/slave_ip",
-  "/leofs/manager/num_replicas".
-  "/leofs/manager/read".
+  "/leofs/manager/num_replicas",
+  "/leofs/manager/read",
   "/leofs/manager/write",
   "/leofs/manager/delete",
   "/leofs/manager/rack_aware_replicas",
@@ -17,4 +17,5 @@ keys= [
   "/leofs/manager/cluster_id",
   "/leofs/distributed_cookie"
 ]
-reload_cmd="/opt/leofs/leo_manager_0/bin/leo_manager stop && /opt/leofs/leo_manager_0/bin/leo_manager start"
+watch=true
+reload_cmd="/opt/leofs/leo_manager_0/bin/leo_manager stop; /opt/leofs/leo_manager_0/bin/leo_manager start"

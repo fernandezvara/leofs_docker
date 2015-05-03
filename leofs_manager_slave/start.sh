@@ -1,10 +1,9 @@
 #!/bin/bash
 
-export CONF_MANAGER_SLAVE_IP=$(/sbin/ip route|awk '/default/ { print $3}')
+#export CONF_IP=$(/sbin/ip route|awk '/default/ { print $3}')
+export CONF_IP=$(/sbin/ip -o -4 addr list eth1 | awk '{print $4}' | cut -d/ -f1)
 
-/opt/consulkv/consulkv set "/leofs/manager/slave_log_level" $CONF_LOG_LEVEL
-/opt/consulkv/consulkv set "/leofs/manager/slave_ip" $CONF_MANAGER_SLAVE_IP
+/opt/consulkv/consulkv set "leofs/manager/slave_log_level" $CONF_LOG_LEVEL
+/opt/consulkv/consulkv set "leofs/manager/slave_ip" $CONF_IP
 
-/opt/confd/confd -backend consul -confdir /etc/confd -node $CONF_CONSUL
-
-$LEOFS_PATH/leo_manager_1/bin/leo_manager start
+/usr/local/bin/supervisord

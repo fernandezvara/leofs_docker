@@ -4,6 +4,8 @@ dest="/opt/leofs/leo_storage/etc/leo_storage.conf"
 owner="root"
 mode="644"
 keys= [
-"/leofs/manager/master_ip",
-"/leofs/manager/slave_ip",
+  "/leofs/manager/master_ip",
+  "/leofs/manager/slave_ip",
 ]
+watch=true
+reload_cmd="/opt/leofs/leo_storage/bin/leo_storage stop; /opt/leofs/leo_storage/bin/leo_storage start"

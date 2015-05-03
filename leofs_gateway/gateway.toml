@@ -7,3 +7,5 @@ keys= [
   "/leofs/manager/master_ip",
   "/leofs/manager/slave_ip",
 ]
+watch=true
+reload_cmd="/opt/leofs/leo_gateway/bin/leo_gateway stop; /opt/leofs/leo_gateway/bin/leo_gateway start"

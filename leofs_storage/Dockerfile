@@ -1,4 +1,4 @@
-FROM devopsbq/debian78_leofs_builder:1.2.8
+FROM devopsbq/debian78_leofs_builder:1.2.8.consul
 
 MAINTAINER Ops@bq <devops@bq.com>
 
@@ -17,6 +17,7 @@ ENV CONF_MANAGER_SLAVE_IP 127.0.0.1
 COPY storage.toml /etc/confd/conf.d/storage.toml
 COPY leo_storage.tmpl /etc/confd/templates/leo_storage.tmpl
 COPY start.sh /opt/start.sh
+COPY supervisord.conf /etc/supervisord.conf
 
 EXPOSE 4010:4010
 EXPOSE 4369:4369

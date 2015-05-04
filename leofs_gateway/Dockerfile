@@ -23,10 +23,17 @@ ENV CONF_GATEWAY_CHUNCKED_OBJ_LEN 5242880
 
 ENV CONF_LOG_LEVEL 1
 
+ENV CONF_LEOFS_USER_PASSWORD password
+
 COPY gateway.toml /etc/confd/conf.d/gateway.toml
 COPY leo_gateway.tmpl /etc/confd/templates/leo_gateway.tmpl
 COPY start.sh /opt/start.sh
 COPY supervisord.conf /etc/supervisord.conf
+
+RUN apt-get install -y openssh-server && \
+    mkdir -p /var/run/sshd && \
+    sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
+    sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 
 EXPOSE 2049:2049
 EXPOSE 4000:4000
@@ -34,6 +41,7 @@ EXPOSE 4369:4369
 EXPOSE 8080:8080
 EXPOSE 8443:8443
 EXPOSE 22050:22050
+EXPOSE 50025:50025
 
 RUN chmod 755 /opt/start.sh
 

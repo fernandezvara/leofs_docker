@@ -3,9 +3,10 @@ src="leo_storage.tmpl"
 dest="/opt/leofs/leo_storage/etc/leo_storage.conf"
 owner="root"
 mode="644"
-keys= [
+keys=[
   "/leofs/manager/master_ip",
   "/leofs/manager/slave_ip",
 ]
 watch=true
+interval=120
 reload_cmd="/opt/leofs/leo_storage/bin/leo_storage stop; /opt/leofs/leo_storage/bin/leo_storage start"

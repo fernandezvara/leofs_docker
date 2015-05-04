@@ -3,7 +3,7 @@ src="leo_manager_master.tmpl"
 dest="/opt/leofs/leo_manager_0/etc/leo_manager.conf"
 owner="root"
 mode="644"
-keys= [
+keys=[
   "/leofs/manager/master_ip",
   "/leofs/manager/slave_ip",
   "/leofs/manager/num_replicas",
@@ -18,4 +18,5 @@ keys= [
   "/leofs/distributed_cookie"
 ]
 watch=true
+interval=120
 reload_cmd="/opt/leofs/leo_manager_0/bin/leo_manager stop; /opt/leofs/leo_manager_0/bin/leo_manager start"

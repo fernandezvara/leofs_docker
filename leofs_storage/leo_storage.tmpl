@@ -380,7 +380,7 @@ mnesia.dc_dump_limit = 40
 ## For vm.args
 ##======================================================================
 ## Name of the leofs-storage node
-nodename = {{getenv "CONF_STORAGE_NAME"}}@{{getenv "CONF_STORAGE_IP"}}
+nodename = {{getenv "CONF_STORAGE_NAME"}}@{{getenv "CONF_IP"}}
 
 ## Cookie for distributed node communication.  All nodes in the same cluster
 ## should use the same cookie or they will not be able to communicate.

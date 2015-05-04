@@ -87,13 +87,13 @@ bucket_prop_sync_interval = 300
 ## GATEWAY - NFS-related configurations
 ## --------------------------------------------------------------------
 ## Mountd's port number
-nfs.mountd.port = {{getenv "CONF_GATEWAT_NFS_MOUNTD_PORT"}}
+## nfs.mountd.port = {{getenv "CONF_GATEWAT_NFS_MOUNTD_PORT"}}
 
 ## Mountd's the number of acceptors
 ## nfs.mountd.acceptors = 128
 
 ## NFSd's port number
-nfs.nfsd.port = {{getenv "CONF_GATEWAT_NFS_NFSD_PORT"}}
+## nfs.nfsd.port = {{getenv "CONF_GATEWAT_NFS_NFSD_PORT"}}
 
 ## NFSd's the number of acceptors
 ## nfs.nfsd.acceptors = 128
@@ -121,8 +121,8 @@ large_object.reading_chunked_obj_len = 5242880
 ## GATEWAY - Cache
 ## --------------------------------------------------------------------
 ## If this parameter is 'true', Gateway turns on HTTP-based cache server, like Varnish OR Squid.
-## If this parameter is 'false', Stores objects into the Gateway�~@~Ys memory.
-## When operating READ, the Etag of the cache is compared with a backend storage�~@~Ys Etag.
+## If this parameter is 'false', Stores objects into the Gateway's memory.
+## When operating READ, the Etag of the cache is compared with a backend storage's Etag.
 ## cache.http_cache = false
 
 ## A number of cache workers
@@ -302,11 +302,11 @@ log.log_level = {{getenv "CONF_LOG_LEVEL"}}
 ## For vm.args
 ##======================================================================
 ## Name of the leofs-gateway node
-nodename = {{getenv "CONF_GATEWAY_NAME"}}@{{getenv "CONF_GATEWAY_IP"}}
+nodename = {{getenv "CONF_GATEWAY_NAME"}}@{{getenv "CONF_IP"}}
 
 ## Cookie for distributed node communication.  All nodes in the same cluster
 ## should use the same cookie or they will not be able to communicate.
-distributed_cookie = {{getenv "CONF_DISTRIBUTED_COOKIE"}}
+distributed_cookie = {{getv "/leofs/distributed_cookie"}}
 
 ## Enable kernel poll
 erlang.kernel_poll = true
@@ -349,8 +349,3 @@ process_limit = 1048576
 
 ## Path of SNMP-agent configuration
 ## snmp_conf = ./snmp/snmpa_gateway_0/leo_gateway_snmp
-
-
-%%% This forces Erlang to use only ports 9100--9105 for distributed Erlang traffic.
-application:set_env(kernel, inet_dist_listen_min, 9100).
-application:set_env(kernel, inet_dist_listen_max, 9105).

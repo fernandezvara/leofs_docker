@@ -6,7 +6,7 @@ mode="644"
 keys=[
   "/leofs/manager/master_ip",
   "/leofs/manager/slave_ip",
+  "/leofs/distributed_cookie",
 ]
 watch=true
-interval=120
 reload_cmd="/opt/leofs/leo_storage/bin/leo_storage stop; /opt/leofs/leo_storage/bin/leo_storage start"

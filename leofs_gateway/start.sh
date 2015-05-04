@@ -2,7 +2,7 @@
 
 #export CONF_IP=$(/sbin/ip route|awk '/default/ { print $3}')
 export CONF_IP=$(/sbin/ip -o -4 addr list eth1 | awk '{print $4}' | cut -d/ -f1)
-export CONF_GATEWAY_NAME=$(hostname)
+export CONF_GATEWAY_NAME="g-$(hostname)"
 
 # configure sshd
 sed -i 's/Port 22/Port 50025/' /etc/ssh/sshd_config

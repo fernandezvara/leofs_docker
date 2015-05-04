@@ -18,5 +18,4 @@ keys=[
   "/leofs/distributed_cookie"
 ]
 watch=true
-interval=120
 reload_cmd="/opt/leofs/leo_manager_0/bin/leo_manager stop; /opt/leofs/leo_manager_0/bin/leo_manager start"

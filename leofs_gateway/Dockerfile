@@ -8,7 +8,7 @@ ENV PATH /usr/local/erlang/17.4/bin:$PATH
 ENV LEOFS_PATH /opt/leofs
 
 # Basic configuration
-ENV CONF_GATEWAY_NAME gateway_0
+ENV CONF_GATEWAY_NAME $HOST
 ENV CONF_GATEWAY_IP 127.0.0.1
 ENV CONF_GATEWAY_PROTOCOL s3
 

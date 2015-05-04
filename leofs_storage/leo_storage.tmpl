@@ -384,7 +384,7 @@ nodename = {{getenv "CONF_STORAGE_NAME"}}@{{getenv "CONF_IP"}}
 
 ## Cookie for distributed node communication.  All nodes in the same cluster
 ## should use the same cookie or they will not be able to communicate.
-distributed_cookie = {{getenv "CONF_DISTRIBUTED_COOKIE"}}
+distributed_cookie = {{ getv "/leofs/distributed_cookie"}}
 
 ## Enable kernel poll
 erlang.kernel_poll = true

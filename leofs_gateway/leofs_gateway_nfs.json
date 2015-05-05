@@ -10,26 +10,29 @@
   "container": {
     "docker": {
       "forcePullImage": true,
-      "image": "devopsbq/leofs_gateway:1.2.8.consul1",
+      "image": "devopsbq/leofs_gateway:1.2.8.consul",
       "network": "HOST",
-      "privileged": false
+      "privileged": true
     },
     "type": "DOCKER"
   },
   "cpus": 0.5,
   "env": {
-    "CONF_CONSUL": "consul.999urls.com:8500"
+    "CONF_CONSUL": "consul.999urls.com:8500",
+    "CONF_GATEWAY_PROTOCOL": "nfs",
+    "CONF_GATEWAY_NFS_MOUNTD_PORT": "22050",
+    "CONF_GATEWAY_NFS_NFSD_PORT": "2049",
+    "CONF_GATEWAY_CHUNCKED_OBJ_LEN": "1048576"
   },
   "executor": "",
   "healthChecks": [],
-  "id": "/leofs/gateway",
+  "id": "/leofs/gatewaynfs",
   "instances": 1,
   "maxLaunchDelaySeconds": 300,
   "mem": 128,
   "ports": [
-    8080
   ],
-  "requirePorts": false,
+  "requirePorts": true,
   "tasksRunning": 1,
   "tasksStaged": 0,
   "upgradeStrategy": {

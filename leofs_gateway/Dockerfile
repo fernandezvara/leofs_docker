@@ -14,8 +14,8 @@ ENV CONF_GATEWAY_PROTOCOL s3
 
 # TCP/IP Ports
 ENV CONF_GATEWAY_HTTP_PORT 8080
-ENV CONF_GATEWAT_NFS_MOUNTD_PORT 22050
-ENV CONF_GATEWAT_NFS_NFSD_PORT 2049
+ENV CONF_GATEWAY_NFS_MOUNTD_PORT 22050
+ENV CONF_GATEWAY_NFS_NFSD_PORT 2049
 
 # Object Length
 ENV CONF_GATEWAY_CHUNCKED_OBJ_LEN 5242880
@@ -35,13 +35,13 @@ RUN apt-get install -y openssh-server && \
     sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
     sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 
-EXPOSE 2049:2049
-EXPOSE 4000:4000
-EXPOSE 4369:4369
-EXPOSE 8080:8080
-EXPOSE 8443:8443
-EXPOSE 22050:22050
-EXPOSE 50025:50025
+EXPOSE 2049
+EXPOSE 4000
+EXPOSE 4369
+EXPOSE 8080
+EXPOSE 8443
+EXPOSE 22050
+EXPOSE 50025
 
 RUN chmod 755 /opt/start.sh
 

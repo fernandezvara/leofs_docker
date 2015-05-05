@@ -50,7 +50,7 @@ protocol = {{getenv "CONF_GATEWAY_PROTOCOL"}}
 ## GATEWAY - HTTP-related configurations
 ## --------------------------------------------------------------------
 ## Port number the Gateway uses for HTTP connections
-http.port = {{getenv "CONF_GATEWAY_HTTP_PORT"}}
+http.port = {{getenv "PORT"}}
 
 ## Numbers of processes listening for connections
 http.num_of_acceptors = 128
@@ -87,13 +87,13 @@ bucket_prop_sync_interval = 300
 ## GATEWAY - NFS-related configurations
 ## --------------------------------------------------------------------
 ## Mountd's port number
-## nfs.mountd.port = {{getenv "CONF_GATEWAT_NFS_MOUNTD_PORT"}}
+nfs.mountd.port = {{getenv "CONF_GATEWAY_NFS_MOUNTD_PORT"}}
 
 ## Mountd's the number of acceptors
 ## nfs.mountd.acceptors = 128
 
 ## NFSd's port number
-## nfs.nfsd.port = {{getenv "CONF_GATEWAT_NFS_NFSD_PORT"}}
+nfs.nfsd.port = {{getenv "CONF_GATEWAY_NFS_NFSD_PORT"}}
 
 ## NFSd's the number of acceptors
 ## nfs.nfsd.acceptors = 128

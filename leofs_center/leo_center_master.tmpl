@@ -1,0 +1,20 @@
+##======================================================================
+## LeoFS - Center Configuration (MASTER)
+##======================================================================
+
+:managers:
+  - '{{getv "/leofs/manager/master_ip"}}:10020' # master
+  - '{{getv "/leofs/manager/slave_ip"}}:10021' # slave
+:credential:
+  :access_key_id: "None"
+  :secret_access_key: "None"
+:session:
+  :local:
+    :secret: ""
+    :expire_after: 300
+:snmp:
+  - ETS memory usage (1-min Averages)
+  - Processes memory usage (1-min Averages)
+  - System memory usage (1-min Averages)
+:plugins:
+#  - "disable_sign_up.rb"

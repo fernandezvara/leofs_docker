@@ -1,0 +1,11 @@
+[template]
+src="leo_center_master.tmpl"
+dest="/opt/leofs/leo_center/config.yml"
+owner="root"
+mode="644"
+keys= [
+  "/leofs/manager/master_ip",
+  "/leofs/manager/slave_ip",
+]
+watch=true
+reload_cmd = "/opt/leofs/leo_center/thin -l stdout -C /opt/leofs/leo_center/thin.yml stop && /opt/leofs/leo_center/thin -l stdout -C /opt/leofs/leo_center/thin.yml start"

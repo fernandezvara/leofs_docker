@@ -1,0 +1,47 @@
+{
+  "backoffFactor": 1.15,
+  "backoffSeconds": 1,
+  "constraints": [
+    [
+      "hostname",
+      "UNIQUE"
+    ]
+  ],
+  "container": {
+    "docker": {
+      "forcePullImage": true,
+      "image": "devopsbq/leofs_center:1.2.8.consul",
+      "network": "BRIDGE",
+      "privileged": false,
+      "portMappings": [
+        {
+          "containerPort": 9000,
+          "hostPort": 0,
+          "protocol": "tcp",
+          "servicePort": 9000
+        }
+      ]
+    },
+    "type": "DOCKER"
+  },
+  "cpus": 0.5,
+  "env": {
+    "CONF_CONSUL": "consul.999urls.com:8500"
+  },
+  "executor": "",
+  "healthChecks": [],
+  "id": "/leofs/center",
+  "instances": 1,
+  "maxLaunchDelaySeconds": 300,
+  "mem": 64,
+  "ports": [
+    9000
+  ],
+  "requirePorts": false,
+  "tasksRunning": 1,
+  "tasksStaged": 0,
+  "upgradeStrategy": {
+    "maximumOverCapacity": 0.2,
+    "minimumHealthCapacity": 0.5
+  }
+}
